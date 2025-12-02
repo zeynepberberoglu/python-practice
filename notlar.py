@@ -1,167 +1,165 @@
-#Bu bir yorum satırıdır
+# Core Python Concepts and Notes
 
-#Ekrana yazdırma
-print("Merhaba Dünya!")
+# This is a comment line
+# print("Hello World!")
 
-#Kulanıcıdan veri alma
-isim = input("Adın nedir? ")
+# Data Input from User
+# user_name = input("What is your name? ")
 
-#Temel Veri Tipleri
-x = 5           # int
-y = 3.14        # float
-isim = "Zeynep" # str
-aktif = True    # bool
+## --- Fundamental Data Types ---
+x = 5               # int (Integer)
+y = 3.14            # float (Floating-point number)
+name = "Zeynep"     # str (String - text)
+is_active = True    # bool (Boolean - True/False)
 
-#Tip Dönüşümü
-yas = int("19") #19 str halindeyken başına int yazıp inte çevirdik
-metin = str(42) #49 bir intken başına str yazarak str haline getirdik
+# Type Casting (Conversion)
+age = int("19")     # Converts string "19" to integer 19
+text_num = str(42)  # Converts integer 42 to string "42"
 
-isim = "Zeynep"
-print(isim.upper())   # ZEYNEP
-print(isim[0:3])      # Zey (başlangıç dahil edilir,bitiş dahil edilmez)
-print(f"Merhaba {isim}")  # formatted string
+# String Operations
+full_name = "Zeynep"
+print(full_name.upper())    # Output: ZEYNEP (Converts to uppercase)
+print(full_name[0:3])       # Output: Zey (Slicing: Start index is inclusive, end index is exclusive)
+print(f"Hello {full_name}") # Formatted string (f-string)
 
-#Operatörler
+## --- Operators ---
+# Arithmetic: + - * / // (floor division) % (modulus) ** (exponentiation)
+# Comparison: == != > < >= <=
+# Logical: and or not
+# Membership: "a" in "zeynep" # False
 
-# Aritmetik: + - * / // % **
-# Karşılaştırma: == != > < >= <=
-# Mantıksal: and or not
-# Üyelik: "a" in "zeynep" → False
-
-#if-elif-else
-yas = 18
-if yas >= 18:
-    print("Reşit")
+## --- Control Flow ---
+# if-elif-else
+age = 18
+if age >= 18:
+    print("Adult")
 else:
-    print("Değil")
+    print("Minor")
 
-#for döngüsü
-for i in range(5): #0,1,2,3,4 sayılarının hepsini tek tek yazar.Bir dizideki tüm elemanlara aynı işlem yapılacağı zaman kullanılır
+# for Loop (Iteration)
+# Iterates through numbers 0, 1, 2, 3, 4. Useful for performing the same operation 
+# on all elements in a sequence (list, range, etc.)
+for i in range(5):
     print(i)
 
-#while döngüsü
-x = 0
-while x < 3:
-    print("Merhaba")
-    x += 1
+# while Loop (Condition-based iteration)
+counter = 0
+while counter < 3:
+    print("Hello")
+    counter += 1
 
-#fonksiyonlar
-def topla(a, b):
+## --- Functions ---
+def add(a, b):
+    """Returns the sum of two numbers."""
     return a + b
 
-print(topla(2, 3))
+print(add(2, 3))
 
-#varsayılan parametre
-def selamla(isim="Zeynep"):
-    print(f"Merhaba {isim}!")
-    #kullanıcı parametre yazarsa o kullanılır,yazmazsa "zeynep" değeri otomatik devreye girer
+# Default Parameters
+def greet(name="Zeynep"):
+    """Greets the user. Uses the default name if no parameter is provided."""
+    print(f"Hello {name}!")
+# If the user provides an argument, it is used; otherwise, "Zeynep" is used.
 
-#lambda (kısa ve basit fonk tanımlamaları)
-kare = lambda x: x ** 2 #x parametre,x**2 ise return yerine geçer yani döndürülecek ifade
-print(kare(5))   # 25
+# Lambda Functions (Short, simple, anonymous function definitions)
+square = lambda x: x ** 2 # x is the parameter, x ** 2 is the expression to be returned
+print(square(5))    # 25
 
-#Koleksiyonlar
-#Listeler-değiştirilebilir veri tipi (mutable)
-liste = [1, 2, 3]
-liste.append(4)
-liste.remove(2)
-print(len(liste))
+## --- Collections (Data Structures) ---
 
-#tuple-değiştirilemez veri tipi(immutable)
-renkler = ("kırmızı", "mavi", "yeşil")
-renkler.append("sarı")  # Hata verir
-renkler.remove("mavi")  # Hata verir
+# Lists - Mutable (Changeable)
+my_list = [1, 2, 3]
+my_list.append(4)   # Adds 4 to the end
+my_list.remove(2)   # Removes the first occurrence of 2
+print(len(my_list)) # Returns the number of elements
 
-#kümeler-değiştirilebilir ama sıralı değil(index yok)
-#her değerden bir tane vardır tekrar olmaz
-sayilar = {1, 2, 3}
+# Tuples - Immutable (Unchangeable)
+colors = ("red", "blue", "green")
+# colors.append("yellow") # Error (Cannot modify immutable type)
+# colors.remove("blue")   # Error (Cannot modify immutable type)
 
-#dictionary 
-ogrenci = {"isim": "Zeynep", "yas": 19}
-print(ogrenci["isim"])
+# Sets - Mutable but Unordered (No index)
+# Each value is unique; duplicates are not allowed.
+numbers = {1, 2, 3}
 
+# Dictionaries - Key-Value pairs (Mapping)
+student = {"name": "Zeynep", "age": 19}
+print(student["name"])
 
-#Hata yönetimi (try-except-finally)
+## --- Exception Handling (try-except-finally) ---
 try:
-    #hata çıkma ihtimali olan kod
-    x = int(input("Sayı gir: "))
+    # Code block where an error is anticipated
+    num = int(input("Enter a number: "))
 except ValueError:
-    #hata olursa burası çalışır
-    print("Geçersiz giriş!")
+    # Executed if a ValueError occurs (e.g., non-numeric input)
+    print("Invalid input!")
 else:
-    #hata olmazsa çalışır
-    print("hata yok,işlem başarılı")
-finally: 
-    #ne olursa olsun çalışır
-    print("Bitti.")
-
-
-#Dosya İşlemleri
-dosya = open("deneme.txt", "r") #eğr dosya kod ile aynı klasördeyse bu iekilde yazabilirsin,değilse tam yolu belirtmen gerek
-dosya = open("C:/Users/Zeynep/Desktop/veriler/deneme.txt", "r") #bu şekilde
-
-#dosyayı açıp okumak
-dosya = open("deneme.txt", "r")
-icerik = dosya.read()
-print(icerik)
-dosya.close() #dosyayı kapatmazsan arka planda açık kalabilir,büyük projelerde sıkıntı oluşturur
-
-#dosyaya yazmak
-dosya = open("deneme.txt", "w")
-dosya.write("Merhaba Zeynep!\n") #dosyayı tamamen sıfırlar ve yeni metni yazar,önceden içinde olanlar silinir
-dosya.write("Python öğreniyorum :)\n")
-dosya.close() 
-
-#ekleme yapmak
-dosya = open("deneme.txt", "a") 
-dosya.write("Bu satır sona eklendi.\n") #silmeden sadece sona ekleme yapar
-dosya.close()
-
-
-#with kullanarak dosya açmak
-with open("deneme.txt", "r") as dosya:
-    icerik = dosya.read()
-    print(icerik)
-# with biter bitmez dosya otomatik kapanır,bir daha close yazmaya gerek yok
-
-#finally kullanımı
-try:
-    dosya = open("deneme.txt", "r") #burada with kullanmaya gerek yok çünkü zaten sonda her türlü kapatıyoruz
-    icerik = dosya.read()
-    print(icerik)
-except FileNotFoundError:
-    print("Dosya bulunamadı!")
+    # Executed only if no exception occurs in the 'try' block
+    print("No error, operation successful.")
 finally:
-    dosya.close()   # hata olsa bile dosya kapanır
+    # Executed regardless of whether an exception occurred or not
+    print("Finished.")
 
-#dosya açma modları
+## --- File Operations ---
 
-# r--sadece okuma
-# w--sadece yazma
-# a--ekleme
-# x-sadece tebi dosya oluşturur(zaten varsa hata verir)
+# Opening a file (Absolute vs. Relative Path)
+# file_r = open("data.txt", "r") # Relative path (if file is in the same directory)
+# file_abs = open("C:/Users/Zeynep/Desktop/data/data.txt", "r") # Absolute path
 
-#OOP
-class Araba:
-    def __init__(self, marka, model): #sınıf çağırıldığında otomatik çalışan yapıcı fonksiyon
-        #self : o sınıftan türetilen nesneyi temsil eder
-        self.marka = marka
+# Read operation
+try:
+    file_read = open("deneme.txt", "r")
+    content = file_read.read()
+    print(content)
+finally:
+    file_read.close() # Always close the file to release system resources
+
+# Write operation (Mode 'w' - overwrites file contents)
+# file_write = open("deneme.txt", "w")
+# file_write.write("Hello Zeynep!\n") # Wipes the file clean and writes new text
+# file_write.write("I am learning Python :)\n")
+# file_write.close()
+
+# Append operation (Mode 'a' - adds to the end)
+# file_append = open("deneme.txt", "a")
+# file_append.write("This line was appended to the end.\n") # Adds without deleting existing content
+# file_append.close()
+
+# Recommended way: Using 'with' statement
+# The file is automatically closed when the 'with' block finishes, even if errors occur.
+with open("deneme.txt", "r") as file_handle:
+    content = file_handle.read()
+    print(content)
+
+# File Modes
+# r: Read only
+# w: Write only (overwrites existing file)
+# a: Append (adds to the end of existing file)
+# x: Exclusive creation (creates a new file, fails if file already exists)
+
+## --- Object-Oriented Programming (OOP) ---
+
+class Car:
+    # Constructor: Called automatically when a class object is created
+    def __init__(self, brand, model):
+        # self: Represents the instance (object) being created from the class
+        self.brand = brand
         self.model = model
 
-    def bilgi(self):
-        print(f"Marka: {self.marka}, Model: {self.model}")
+    def get_info(self):
+        print(f"Brand: {self.brand}, Model: {self.model}")
 
-araba1 = Araba("Toyota", "Corolla")
-araba1.bilgi()
+car1 = Car("Toyota", "Corolla")
+car1.get_info()
 
-#Inheritance
-class ElektrikliAraba(Araba): #elektrikli araba adında yeni sınıf oluşturdum,araba sınıfının özelliklerini devraldı
-    def __init__(self, marka, model, batarya):
-        super().__init__(marka, model) #araba sınıfının (parentın) fonksiyonlarına erişir super() ile
-        self.batarya = batarya #marka ve modeli arabanın init fonk ile tanımladık,elektrikli arabaya özel batarya da ekledi
+# Inheritance
+class ElectricCar(Car): # ElectricCar inherits properties from the Car class (Parent)
+    def __init__(self, brand, model, battery_capacity):
+        super().__init__(brand, model) # Calls the parent (Car) class's __init__ function
+        self.battery_capacity = battery_capacity # Adds a specific attribute for ElectricCar
 
-#Kavramlar
-#Encapsulation (Kapsülleme) : Veriyi ve metotları bir sınıf içinde toplamak
-#Inheritance (Kalıtım) : Bir sınıfın başka bir sınıftan özellik alması
-#Polymorphism (Çok biçimlilik) : Aynı isimli metodun farklı davranabilmesi
-#Abstraction (Soyutlama) : Gereksiz detayları gizleyip sadece gerekli fonksiyonları göstermek
+# Key OOP Concepts
+# Encapsulation: Bundling data (attributes) and methods that operate on the data into a single unit (class).
+# Inheritance: A class deriving properties and behaviors from another class.
+# Polymorphism: The ability of a method (function) to behave differently based on the object it is called on.
+# Abstraction: Hiding the complex implementation details and showing only the essential features.
