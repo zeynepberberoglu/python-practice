@@ -19,3 +19,9 @@ This solution follows the problem definition directly by **iterating** through t
 
 While a more idiomatic Python solution would use the list concatenation operator (`return nums + nums`), this approach explicitly demonstrates the construction of the array using fundamental iterative loops.
 
+* **Time Complexity:** $O(n)$
+    * The solution involves iterating through the input array $\text{nums}$ exactly twice (once in the `for` loop and once in the `while` loop), where $n$ is the length of $\text{nums}$. The time taken grows linearly with the input size.
+
+* **Space Complexity:** $O(n)$
+    * An auxiliary array $\text{ans}$ of size $2n$ is created to store the result. Since $2n$ is proportional to $n$, the space complexity is linear with respect to the input size.
+
