@@ -19,8 +19,3 @@ We use a single loop to iterate $n$ times. In each iteration, we append one elem
 1.  A pointer (e.g., $\text{a}$) tracks the index of the element $\text{x}_i$ from the beginning of the array.
 2.  The main loop variable (e.g., $\text{i}$) tracks the index of the element $\text{y}_i$ from the middle of the array (starting at index $n$).
 3.  Inside the loop, we append $\text{nums}[\text{a}]$ (the $\text{x}$ element) followed immediately by $\text{nums}[\text{i}]$ (the $\text{y}$ element) to the result array.
-
-## ⏱️ Complexity Analysis
-
-* **Time Complexity:** $O(n)$
-    * We iterate exactly $n$ times (where $n$ is half the total length of the array). Since we perform a constant number of operations (two appends and one increment) inside the loop, the time complexity grows linearly with the input size $n$.
