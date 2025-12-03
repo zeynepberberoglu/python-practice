@@ -19,10 +19,6 @@ This solution uses an **iterative approach** with nested loops to explicitly tra
 4.  **Tracking:** After the inner loop completes, the current count $\text{con}$ is appended to the $\text{general}$ list. $\text{con}$ is then reset to 0 to prepare for the next sequence.
 5.  **Result:** Finally, the maximum value from the $\text{general}$ list is returned as the answer.
 
-### Alternative (Single Pass Optimization)
-
-A more common solution is the **Single Pass** approach, which uses two variables ($\text{current\_count}$ and $\text{max\_count}$) in a single loop, avoiding the need for the $\text{general}$ list. When a **0** is encountered, the $\text{current\_count}$ is reset to 0. In every iteration, $\text{max\_count}$ is updated using $\max(\text{max\_count}, \text{current\_count})$. Both approaches achieve the same efficiency.
-
 ## ⏱️ Complexity Analysis
 
 * **Time Complexity:** $O(N)$
