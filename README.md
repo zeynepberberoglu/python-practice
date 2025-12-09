@@ -7,13 +7,15 @@ It is specifically maintained to demonstrate my **technical proficiency** and **
 
 ---
 
-## 🧠 LeetCode Solutions
-This section contains structured solutions to algorithmic problems, each with detailed complexity analysis and implementation notes.
+## 🧠 LeetCode & Algorithmic Solutions
 
-| Problem No | Problem Name | Language | Solution |
-| :---: | :--- | :---: | :---: |
-| 1929 | Concatenation of Array | Python | [View Solution](./1929-Concatenation-of-Array/README.md) |
-| [New No] | [New Name] | Python | [Link] |
+| Problem No | Problem Name | Language | Solution | Complexity |
+| :---: | :--- | :---: | :---: | :---: |
+| **0645** | **Set Mismatch** | **Python** | **[View Solution](./0645-Set-Mismatch/README.md)** | **$O(N)$** |
+| 0485 | Max Consecutive Ones | Python | [View Solution](./0485-Max-Consecutive-Ones/README.md) | $O(N)$ |
+| 1470 | Shuffle the Array | Python | [View Solution](./1470-Shuffle-the-Array/README.md) | $O(N)$ |
+| 1929 | Concatenation of Array | Python | [View Solution](./1929-Concatenation-of-Array/README.md) | $O(N)$ |
+| ... | *More solutions added weekly* | ... | ... | ... |
 
 ---
 
