@@ -4,7 +4,7 @@
 [LeetCode Problem 645 - Set Mismatch](https://leetcode.com/problems/set-mismatch/)
 
 ## ✍️ Problem Description
-Given an array $\text{nums}$ which initially contained all integers from 1 to $n$, but has suffered an error resulting in one number being duplicated and one number being lost. The goal is to identify the number that is repeated and the number that is missing, returning them as an array $[\text{duplicated\_num}, \text{missing\_num}]$.
+Given an array $\text{nums}$ which initially contained all integers from 1 to $n$, but has suffered an error resulting in one number being duplicated and one number being lost. The goal is to identify the number that is repeated and the number that is missing, returning them as an array $[\text{duplicated\num}, \text{missing\num}]$.
 
 ***
 
